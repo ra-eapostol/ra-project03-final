@@ -17,7 +17,7 @@
 	<label>Content*:</label>
 	<textarea [(ngModel)]="entry.content" rows="20" cols="100" name="content" required></textarea>
 
-	<input (click)="submitForm()" type="submit" name="Submit" placeholder="Submit">
+	<input (click)="submitForm()" type="submit" name="Submit" placeholder="Submit" [routerLink]="['/journal']">
 	<button [routerLink]="['/journal']">Cancel</button>
 <!-- 	<input type="reset" name="Reset" placeholder="Reset"> -->
 </form>
