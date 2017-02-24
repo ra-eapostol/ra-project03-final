@@ -1,0 +1,19 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<button [routerLink]="['/journal', 'newEntry']">Create New Post</button>
+
+<div *ngFor="let entry of journalEntries" 
+	 (click)="onSelect(entry)" 
+	 [routerLink]="['/journal', entry.ID]"
+	 class="container">
+
+	<div class="post-div">
+	<div [ngStyle]="{ 'background-image': 'url(' + entry.image + ')'}" class="image-div">
+		<div class="title-div"><h1>{{entry.title}}</h1></div>
+  		
+  	</div>
+  		<p>{{entry.date}}</p>
+  		<p>{{entry.content.slice(0,99)}}</p>
+  		<button (click)="gotoPost()">See Post</button>
+  	</div>
+  	
+</div>

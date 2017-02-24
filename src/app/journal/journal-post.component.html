@@ -1,0 +1,21 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<div *ngIf="journalEntry" class="container">
+	<h2>{{journalEntry.title}}</h2>
+	<div><label>id: </label>{{journalEntry.ID}}</div>
+	<div [ngStyle]="{ 'background-image': 'url(' + journalEntry.image + ')'}" class="image-post"></div>
+	<div>
+		<p>{{journalEntry.content}}</p>
+	</div>
+	<button (click)="goBack()">Back</button>
+
+</div>
+
+<div *ngIf="journalEntry===undefined">
+	<div>
+		<p>That post don't exist you silly person.</p>
+	</div>
+	<button (click)="goBack()">Back</button>
+
+
+</div>
+

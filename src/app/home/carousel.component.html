@@ -1,0 +1,9 @@
+<h1>Journal Entries</h1>
+<carousel>
+  <slide *ngFor="let entry of journalPosts" (click)="onSelect(entry)" [routerLink]="['/journal', entry.ID]">
+    <h3>{{entry.title}}</h3>
+    <!-- <img src="{{entry.image}}"> -->
+    <div [ngStyle]="{ 'background-image': 'url(' + entry.image + ')'}" class="image-item-div"></div>
+  </slide>
+</carousel>
+
